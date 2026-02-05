@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Test runner for idle.1m.sh
+# Test runner for uptime.1m.sh
 # Tests the pure functions by sourcing the script with overrides
 
 PASS=0
@@ -52,7 +52,7 @@ assert_file_contains() {
   fi
 }
 
-# Source only the functions from idle.1m.sh (override config to use temp dir)
+# Source only the functions from uptime.1m.sh (override config to use temp dir)
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source_functions() {
   # Override config
@@ -69,13 +69,13 @@ source_functions() {
   mkdir -p "$DATA_DIR"
 }
 
-# Extract functions from idle.1m.sh (source only function definitions)
-eval "$(sed -n '/^read_file()/,/^}/p' "$SCRIPT_DIR/idle.1m.sh")"
-eval "$(sed -n '/^format_duration()/,/^}/p' "$SCRIPT_DIR/idle.1m.sh")"
-eval "$(sed -n '/^dev_log()/,/^}/p' "$SCRIPT_DIR/idle.1m.sh")"
-eval "$(sed -n '/^timestamp_to_epoch()/,/^}/p' "$SCRIPT_DIR/idle.1m.sh")"
-eval "$(sed -n '/^epoch_to_datetime()/,/^}/p' "$SCRIPT_DIR/idle.1m.sh")"
-eval "$(sed -n '/^log_previous_session()/,/^}/p' "$SCRIPT_DIR/idle.1m.sh")"
+# Extract functions from uptime.1m.sh (source only function definitions)
+eval "$(sed -n '/^read_file()/,/^}/p' "$SCRIPT_DIR/uptime.1m.sh")"
+eval "$(sed -n '/^format_duration()/,/^}/p' "$SCRIPT_DIR/uptime.1m.sh")"
+eval "$(sed -n '/^dev_log()/,/^}/p' "$SCRIPT_DIR/uptime.1m.sh")"
+eval "$(sed -n '/^timestamp_to_epoch()/,/^}/p' "$SCRIPT_DIR/uptime.1m.sh")"
+eval "$(sed -n '/^epoch_to_datetime()/,/^}/p' "$SCRIPT_DIR/uptime.1m.sh")"
+eval "$(sed -n '/^log_previous_session()/,/^}/p' "$SCRIPT_DIR/uptime.1m.sh")"
 
 reset_data() {
   rm -rf "$TEMP_DIR/data"
