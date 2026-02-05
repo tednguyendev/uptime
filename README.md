@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Uptime</h1>
-<p align="center">A macOS menu bar timer that tracks how long you've been active.</p>
+<p align="center">A menu bar timer that shows how long you've been at your Mac.</p>
 
 <p align="center">
   <img src="screenshot.png" alt="Screenshot">
